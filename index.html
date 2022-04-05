@@ -47,7 +47,7 @@
         <section class="section-hero">
             <div class="menu-button container">
                 <h1 class="menu-button-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="mainbutton">Заказать услугу</button>
+                <button type="button" class="mainbutton" data-modal-open>Заказать услугу</button>
             </div>
         </section>
 
@@ -286,8 +286,8 @@
 
         <!-- Лого секция -->
         <section class="section">
-            <h2 class="title-page">Постоянные клиенты</h2>
             <div class="container container-size">
+                <h2 class="title-page">Постоянные клиенты</h2>
                 <ul class="icon-list">
                     <li class="icon-item">
                         <svg class="icon-image">
@@ -377,6 +377,18 @@
             </div>
         </div>
     </footer>
+
+<!-- Модальное окно -->
+
+
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <div class="modal-close" data-modal-close>
+                <img src="./images/icons/x.svg" alt="" width="11px">
+            </div>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
