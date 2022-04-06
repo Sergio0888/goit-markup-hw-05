@@ -541,6 +541,7 @@ body {
 .image-item-li {
     margin-bottom: 30px;
 }
+
 .main-image-box {
     position: relative;
     overflow: hidden;
@@ -556,8 +557,9 @@ body {
     top: 0;
     transform: translateY(100%);
     color: var(--brandColor);
-    background:linear-gradient(rgba(33, 150, 243, 0.9),rgba(33, 150, 243, 0.9));
+    background: linear-gradient(rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9));
 }
+
 .second-image-p {
     font-weight: 400;
     font-size: 18px;
@@ -565,6 +567,7 @@ body {
     padding: 63px 24px;
     text-align: center;
 }
+
 .image-item-li:hover .second-image-box {
     top: 0;
     transform: translateY(0%);
@@ -573,10 +576,12 @@ body {
 /* Бекдроп */
 
 .backdrop.is-hidden {
+    display: none;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
+
 .backdrop {
     display: flex;
     justify-content: center;
@@ -588,32 +593,74 @@ body {
     left: 0;
     opacity: 1;
     visibility: visible;
-    padding: 220px auto;
 
-    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
+
+.m-hidden {
+    visibility: hidden;
+    opacity: 0;
+    animation-name: modal;
+    animation-duration: 0.7s;
+}
+
+@keyframes modal {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }    
+}
+
 .modal {
-    position: absolute;
+    position: relative;
     width: 528px;
     height: 581px;
+    padding: 40px;
+    opacity: 1;
+    visibility: visible;
 
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px; 
+    border-radius: 4px;
 }
+
+
 .modal-close {
-    display: flex;
+    /* display: flex;
     justify-content: center;
+    align-items: center; */
     position: absolute;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    top: 0;
-    right: 0;
-    margin: 8px;
+    top: 8px;
+    right: 8px;
     cursor: pointer;
+
 
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+}
+
+.modal-close::before,.modal-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 1.5px;
+    background-color: black;
+}
+.modal-close::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.modal-close::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal-close:hover::after,
+.modal-close:hover::before {
+    background-color: var(--brandcolortwo);
 }
